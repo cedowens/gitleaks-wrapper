@@ -1,5 +1,5 @@
 # gitleaks-wrapper
-Simple wrapper around gitleaks to enumerate publicly facing github repos and then run gitleaks against each in search of exposed secrets/keys.
+Simple wrapper around gitleaks to enumerate publicly facing github repos for teh specified org and then run gitleaks against each in search of exposed secrets/keys. This saves some time from having to manually re-run gitleaks against each of an org's repos.
 
 Steps:
 
