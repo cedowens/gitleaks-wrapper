@@ -5,7 +5,7 @@ Steps:
 
 1. Download and build gitleaks: https://github.com/zricethezav/gitleaks
 
-2. Download this python script and place it in the same directory that you built gitleaks in in step #1 above.
+2. Download this python script and place it in the same directory that you built gitleaks in step #1 above.
 
 3. Run this script and pass the company name into the -c option. Example:
 
