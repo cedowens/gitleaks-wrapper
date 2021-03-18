@@ -7,22 +7,28 @@ import subprocess
 import os
 
 if ((len(sys.argv) < 3 or len(sys.argv) > 5) and '-h' not in sys.argv):
-    print("Usage: %s -c <company_name>" % sys.argv[0])
+    print("Usage: %s {-c <company_name> | -u <user_name>}" % sys.argv[0])
     sys.exit(1)
 
 parser = OptionParser()
 parser.add_option("-c", "--company", help="company to search git repo for")
+parser.add_option("-u", "--user", help="user to search git repo for")
 (options, args) = parser.parse_args()
 
 company = options.company
+user = options.user
+owner = (company or user)
 
-url = "https://api.github.com/orgs/%s/repos" % company
+if company is not None:
+    url = "https://api.github.com/orgs/%s/repos" % company
+else:
+    url = "https://api.github.com/users/%s/repos" % user
 
 response = requests.get(url)
 
 response2 = response.text
 
-response3 = re.findall(r'\"https://github.com/%s/[0-9a-zA-Z-]{2,}"'%company,response2)
+response3 = re.findall(r'\"https://github.com/%s/[0-9a-zA-Z-]{2,}"'%owner,response2)
 
 response4 = set(response3)
 
