@@ -41,7 +41,7 @@ print("[+] Running git-leaks check on each repo found...")
 
 for each in response4:
     print("\033[33m[+] Scanning repo: %s\033[0m" % each)
-    cmd = "./gitleaks -v --repo=%s"%each
+    cmd = "./gitleaks -v --repo-url=%s"%each
     os.system(cmd)
     print("-----------------------------------------------------")
     print("-----------------------------------------------------")
