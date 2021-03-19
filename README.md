@@ -11,7 +11,7 @@ Steps:
 
 3. Run this script and pass the company name into the -c option. Example:
 
-> python3 github-repo-searcher.py -c ExampleCompany
+> python3 github-repo-searcher.py -c [ExampleCompany] -u [ExampleUser]
 
 4. Results will be returned to stdout
 
